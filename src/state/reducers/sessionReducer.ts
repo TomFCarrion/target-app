@@ -4,12 +4,12 @@ import User from 'types/user.entity';
 
 export interface SessionState {
   authenticated: boolean;
-  user: User;
+  user?: User;
 }
 
 const initialState: SessionState = {
   authenticated: false,
-  user: null,
+  user: undefined,
 };
 
 const actionHandlers = (builder: ActionReducerMapBuilder<SessionState>) => {
@@ -27,4 +27,4 @@ const actionHandlers = (builder: ActionReducerMapBuilder<SessionState>) => {
     .addCase(logout.fulfilled, () => initialState)
 };
 
-export default createReducer(initialState, actionHandlers);
+export default createReducer<SessionState>(initialState, actionHandlers);
