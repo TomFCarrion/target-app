@@ -1,7 +1,7 @@
 import React from 'react';
 
 import routesPaths from 'constants/routesPaths';
-import HomePage from 'pages/HomePage';
+import HomePage from 'src/pages/HomePage/HomePage';
 import LoginPage from 'pages/LoginPage/LoginPage';
 
 const routes = [
