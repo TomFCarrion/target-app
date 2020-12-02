@@ -2,7 +2,7 @@ import React from 'react';
 
 import routesPaths from 'constants/routesPaths';
 import HomePage from 'pages/HomePage';
-import LoginPage from 'pages/LoginPage';
+import LoginPage from 'pages/LoginPage/LoginPage';
 
 const routes = [
   {

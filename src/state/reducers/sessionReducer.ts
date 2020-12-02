@@ -1,30 +1,31 @@
-import { ActionReducerMapBuilder, createReducer, PayloadAction } from '@reduxjs/toolkit';
-import { login, signUp, logout, updateSession } from 'state/actions/userActions';
-import User from 'types/user.entity';
+import { createReducer, PayloadAction } from '@reduxjs/toolkit';
+import { updateSession, logoutFulfilled, loginFulfilled } from 'state/actions/userActions';
 
 export interface SessionState {
+  accessToken?: string;
   authenticated: boolean;
-  user?: User;
 }
 
 const initialState: SessionState = {
+  accessToken: undefined,
   authenticated: false,
-  user: undefined,
+}
+
+const handleLoginFulfilled = (state: SessionState, { payload }: PayloadAction<string>) => {
+  state.accessToken = payload;
+  state.authenticated = true;
 };
 
-const actionHandlers = (builder: ActionReducerMapBuilder<SessionState>) => {
-  builder
-    .addCase(login.fulfilled, (state: SessionState, { payload }: PayloadAction<User>) => {
-      state.user = payload;
-      state.authenticated = true;
-    })
-    .addCase(signUp.fulfilled, (state: SessionState, { payload }: PayloadAction<User>) => {
-      state.user = payload;
-    })
-    .addCase(updateSession, (state: SessionState) => {
-      state.authenticated = true;
-    })
-    .addCase(logout.fulfilled, () => initialState)
+const handleLogoutFulfilled = () => {
+  return initialState;
 };
 
-export default createReducer<SessionState>(initialState, actionHandlers);
+const handleUpdateSession = (state: SessionState, { payload }: PayloadAction<string>) => {
+  state.accessToken = payload;
+};
+
+export default createReducer(initialState, {
+  [loginFulfilled.type]: handleLoginFulfilled,
+  [logoutFulfilled.type]: handleLogoutFulfilled,
+  [updateSession.type]: handleUpdateSession,
+});

@@ -5,10 +5,8 @@ import User from 'types/user.entity';
 
 export const login = createAsyncThunk('user/login', async (user: User) => {
   try {
-    const {
-      data: { data }
-    } = await userService.login(user);
-    return data;
+    const { data: { token } } = await userService.login(user);
+    return token;
   } catch ({ response: { data } }) {
     throw data;
   }
@@ -32,3 +30,6 @@ export const signUp = createAsyncThunk('user/signUp', async (user: User) => {
 });
 
 export const updateSession = createAction<object | undefined>('session/update');
+
+export const { fulfilled: loginFulfilled } = login;
+export const { fulfilled: logoutFulfilled } = logout;

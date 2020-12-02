@@ -1,4 +1,4 @@
-    # Getting Started with Base Frontend Project
+# Getting Started with Base Frontend Project
 
 This is a base project that contains some boilerplate code to get started with web apps.
 

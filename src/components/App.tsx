@@ -2,8 +2,8 @@ import React from 'react';
 import { Switch, BrowserRouter } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 
-import useSession from 'hooks/useSession';
-import RouteFromPath from 'components/routes/RouteFromPath';
+import { useSession } from 'hooks';
+import RouteFromPath from 'components/Routes/RouteFromPath';
 import routes from '../routes';
 
 const App = () => {

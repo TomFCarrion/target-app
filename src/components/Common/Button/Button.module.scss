@@ -1,0 +1,17 @@
+@import "src/styles/variables";
+
+.button {
+  background-color: $primary;
+  border: none;
+  color: $white;
+  padding: 1rem;
+  width: 100%;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.disabled {
+  opacity: .65;
+}
