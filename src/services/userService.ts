@@ -4,15 +4,15 @@ import User from 'types/user.entity';
 
 class UserService {
   static login(user: User) {
-    return httpClient.post('/auth/signin', user);
+    return httpClient.post('https://target-mvd-api.herokuapp.com/api/v1/users/sign_in', {"user":{...user}});
   }
 
   static logout() {
-    return httpClient.delete('/auth/signout');
+    return httpClient.delete(''); //WIP
   }
 
   static signUp(user: User) {
-    return httpClient.post('/auth/signup', user);
+    return httpClient.post('https://target-mvd-api.herokuapp.com/api/v1/users', {"user":{...user}});
   }
 }
 
