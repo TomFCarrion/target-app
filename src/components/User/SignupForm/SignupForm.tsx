@@ -98,7 +98,7 @@ const SignupForm = ({ onSubmit }: SignupFormProps) => {
           <div>
             <Dropdown
               name="gender"
-              label="Select"
+              label="GENDER"
               placeholder="Select your gender"
               error={ errors.gender}
               className="login-form-dropdown"
