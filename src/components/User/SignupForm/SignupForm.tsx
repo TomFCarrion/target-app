@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
-import { Field, Formik } from 'formik';
-
+import { Formik } from 'formik';
+import { useHistory } from 'react-router-dom'
 import Input from 'components/Common/Input';
 import Button from 'components/Common/Button';
 import Dropdown from 'components/Common/Dropdown';
@@ -28,6 +28,12 @@ const SignupForm = ({ onSubmit }: SignupFormProps) => {
     password: '',
     password_confirmation: '', 
     gender: '',
+ };
+ 
+ const history = useHistory();
+
+ const handleRedirect = () => {
+   history.push(`/login`);
  };
 
  const options = ['female','male','other'];
@@ -104,7 +110,7 @@ const SignupForm = ({ onSubmit }: SignupFormProps) => {
               className="login-form-dropdown"
               options={ options }
             />
-          </div>
+          </div>   
           <Button
             onClick={handleSubmit}
             disabled={status === PENDING}
@@ -118,7 +124,7 @@ const SignupForm = ({ onSubmit }: SignupFormProps) => {
 
   
     </Formik>
-    <Button onClick={()=> {}} disabled={false} secondary={true} title="SIGN IN" className="login-button"/>
+    <Button onClick={handleRedirect} disabled={false} secondary={true} title="SIGN IN" className="login-button"/>
 
     </>
   );
