@@ -1,11 +1,17 @@
 @import "src/styles/variables";
 
 .button {
-  background-color: $primary;
+  font-family: 'OpenSans';
+  font-size: 11px;
+  background-color: $black;
   border: none;
   color: $white;
   padding: 1rem;
-  width: 100%;
+  width: 180px;
+  height: 37px;
+  left: 231px;
+  top: 551px;
+  
 
   &:focus {
     outline: none;
