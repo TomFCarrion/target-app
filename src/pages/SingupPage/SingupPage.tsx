@@ -17,8 +17,8 @@ const SingupPage = () => {
   }
 
   return (
-    <div className={styles.container} data-testid={testIds.LOGIN_PAGE}>
-      <h1>Sing Up</h1>
+    <div className={styles.container} data-testid={testIds.SIGNUP_PAGE}>
+      <h1>SIGN UP</h1>
       <SignupForm onSubmit={loginRequest} />
     </div>
   );

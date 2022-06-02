@@ -7,11 +7,12 @@ export interface ButtonProps {
   title: string,
   onClick: () => any,
   disabled?: boolean,
+  secondary?: boolean,
   isLoading?: boolean,
   className?: string,
 }
 
-const Button = ({ title, onClick, disabled = true, isLoading = false, className }: ButtonProps) => {
+const Button = ({ title, onClick, disabled = true, secondary = false, isLoading = false, className }: ButtonProps) => {
   const style = classNames.bind(buttonStyle);
 
   return (
@@ -19,7 +20,7 @@ const Button = ({ title, onClick, disabled = true, isLoading = false, className 
       disabled={disabled}
       onClick={onClick}
       type="submit"
-      className={style('button', { 'disabled': disabled, 'loading': isLoading }, className)}
+      className={style('button', { 'secondary': secondary, 'disabled': disabled, 'loading': isLoading }, className)}
     >
       {title}
     </button>

@@ -35,6 +35,7 @@ const SignupForm = ({ onSubmit }: SignupFormProps) => {
   const { status, error } = useStatus(signUp);
 
   return (
+    <>
     <Formik
       initialValues={initialValues}
       onSubmit={onSubmit}
@@ -56,7 +57,6 @@ const SignupForm = ({ onSubmit }: SignupFormProps) => {
               value={values.username}
               error={errors.username}
               onChange={handleChange}
-              placeholder="username"
               label="Name"
               className="login-form-input"
             />
@@ -67,7 +67,6 @@ const SignupForm = ({ onSubmit }: SignupFormProps) => {
               value={values.email}
               error={errors.email}
               onChange={handleChange}
-              placeholder="email"
               label="Email"
               className="login-form-input"
             />
@@ -79,7 +78,7 @@ const SignupForm = ({ onSubmit }: SignupFormProps) => {
               error={errors.password}
               onChange={handleChange}
               type="password"
-              placeholder="********"
+              placeholder="MIN. 8 CHARACTERS LONG"
               label="Password"
               className="login-form-input"
             />
@@ -109,12 +108,19 @@ const SignupForm = ({ onSubmit }: SignupFormProps) => {
           <Button
             onClick={handleSubmit}
             disabled={status === PENDING}
-            title="sign up"
-            className="login-button"
+            title="SIGN UP"
+            className="signup-button"
           />
+
         </form>
+        
       )}
+
+  
     </Formik>
+    <Button onClick={()=> {}} disabled={false} secondary={true} title="SIGN IN" className="login-button"/>
+
+    </>
   );
 };
 
