@@ -13,7 +13,10 @@ export const parseInputErrors = (error: string | Array<string>) => {
   return error;
 };
 
-export const applyQueryParams = (url: string, params: Record<any, any> = {}) => {
+export const applyQueryParams = (
+  url: string,
+  params: Record<any, any> = {}
+) => {
   if (isEmpty(params)) {
     return url;
   }

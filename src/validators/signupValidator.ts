@@ -9,5 +9,3 @@ const signupValidator = object().shape({
 });
 
 export default signupValidator;
-
-

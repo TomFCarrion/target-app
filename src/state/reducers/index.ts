@@ -10,7 +10,7 @@ const sessionPersistConfig = {
   key: 'session',
   storage: localForage,
   whitelist: ['authenticated', 'accessToken'],
-  stateReconciler: autoMergeLevel2,
+  stateReconciler: autoMergeLevel2
 };
 
 const rootReducer = combineReducers({
