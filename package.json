@@ -8,6 +8,7 @@
     "classnames": "^2.2.6",
     "formik": "^2.2.5",
     "localforage": "^1.9.0",
+    "pigeon-maps": "^0.21.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
@@ -54,7 +55,6 @@
     "eject": "react-scripts eject",
     "postinstall": "husky install",
     "prettier-format": "prettier --config .prettierrc 'src/**/*.ts' --write"
-
   },
   "eslintConfig": {
     "extends": [
