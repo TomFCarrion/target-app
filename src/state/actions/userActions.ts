@@ -5,7 +5,9 @@ import User from 'types/user.entity';
 
 export const login = createAsyncThunk('user/login', async (user: User) => {
   try {
-    const { data: { token } } = await userService.login(user);
+    const {
+      data: { token }
+    } = await userService.login(user);
     return token;
   } catch ({ response: { data } }) {
     throw data;

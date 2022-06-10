@@ -4,7 +4,10 @@ import User from 'types/user.entity';
 
 class UserService {
   static login(user: User) {
-    return httpClient.post('https://target-mvd-api.herokuapp.com/api/v1/users/sign_in', {"user":{...user}});
+    return httpClient.post(
+      'https://target-mvd-api.herokuapp.com/api/v1/users/sign_in',
+      { user: { ...user } }
+    );
   }
 
   static logout() {
@@ -12,7 +15,10 @@ class UserService {
   }
 
   static signUp(user: User) {
-    return httpClient.post('https://target-mvd-api.herokuapp.com/api/v1/users', {"user":{...user}});
+    return httpClient.post(
+      'https://target-mvd-api.herokuapp.com/api/v1/users',
+      { user: { ...user } }
+    );
   }
 }
 
