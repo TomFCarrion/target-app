@@ -9,7 +9,7 @@ import {
   PAUSE,
   PERSIST,
   PURGE,
-  REGISTER,
+  REGISTER
 } from 'redux-persist';
 import AppReducer from 'state/reducers';
 import { useDispatch } from 'react-redux';
@@ -17,20 +17,20 @@ import { useDispatch } from 'react-redux';
 const persistConfig = {
   key: 'root',
   storage: localForage,
-  whitelist: ['session'],
+  whitelist: ['session']
 };
 
 const middlewares = [
   ...getDefaultMiddleware({
     serializableCheck: {
-      ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
-    },
-  }),
+      ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER]
+    }
+  })
 ];
 
 if (process.env.NODE_ENV === 'development') {
   const logger = createLogger({
-    collapsed: true,
+    collapsed: true
   });
   middlewares.push(logger);
 }
@@ -40,7 +40,7 @@ const persistedReducer = persistReducer(persistConfig, AppReducer);
 const store = configureStore({
   reducer: persistedReducer,
   preloadedState: {},
-  middleware: middlewares,
+  middleware: middlewares
 });
 
 const persistor = persistStore(store);

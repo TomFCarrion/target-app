@@ -1,11 +1,16 @@
-@import "src/styles/variables";
+@import 'src/styles/variables';
 
 .button {
-  background-color: $primary;
+  font-family: 'OpenSans';
+  font-size: 11px;
+  background-color: $black;
   border: none;
   color: $white;
   padding: 1rem;
-  width: 100%;
+  width: 180px;
+  height: 37px;
+  left: 231px;
+  top: 551px;
 
   &:focus {
     outline: none;
@@ -13,5 +18,17 @@
 }
 
 .disabled {
-  opacity: .65;
+  opacity: 0.65;
+}
+
+.secondary {
+  color: $black;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  border-top: solid $black 1px;
+  margin-top: 2rem;
 }
