@@ -1,0 +1,19 @@
+.container {
+  width: 50%;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: center;
+  height: 100%;
+  background-color: #2fbcf7;
+}
+
+.phone {
+  display: block;
+  width: auto;
+  height: auto;
+  max-height: 90%;
+  max-width: 90%;
+  margin: 2rem;
+}

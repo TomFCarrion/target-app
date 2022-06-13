@@ -9,6 +9,7 @@ import LoginForm from 'components/User/LoginForm';
 import routes from 'constants/routesPaths';
 import testIds from 'constants/testIds';
 import styles from './LoginPage.module.scss';
+import RightSection from 'components/Common/RightSection';
 
 const LoginPage = () => {
   const loginRequest = useDispatch(login);
@@ -17,7 +18,7 @@ const LoginPage = () => {
   const history = useHistory();
 
   const handleRedirect = () => {
-    history.push(`/sign-up`);
+    history.push('/sign-up');
   };
 
   if (authenticated) {
@@ -40,22 +41,18 @@ const LoginPage = () => {
         <Button
           onClick={() => {}}
           title="Forgot Your password?"
-          className="login-button"
+          type='text-bold'
+          disabled={false}
         ></Button>
         <Button
           onClick={() => {}}
           title="CONNECT WITH FACEBOOK"
-          className="login-button"
-          secondary={true}
+          type='text'
+          disabled={false}
         ></Button>
-        <Button
-          onClick={handleRedirect}
-          title="SINGUP"
-          className="login-button"
-          secondary={true}
-        ></Button>
+        <Button onClick={handleRedirect} disabled={false} type={'secondary'} title="SIGN UP"/>
       </div>
-      <div className={styles.right}></div>
+       <RightSection/>
     </div>
   );
 };

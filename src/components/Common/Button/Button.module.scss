@@ -2,19 +2,23 @@
 
 .button {
   font-family: 'OpenSans';
-  font-size: 11px;
-  background-color: $black;
   border: none;
-  color: $white;
   padding: 1rem;
   width: 180px;
   height: 37px;
   left: 231px;
   top: 551px;
+  font-size: 11px;
 
   &:focus {
     outline: none;
+
   }
+}
+
+.default {
+  color: $white;
+  background-color: $black;
 }
 
 .disabled {
@@ -23,6 +27,7 @@
 
 .secondary {
   color: $black;
+  width: 120px;
   background-color: transparent;
   background-repeat: no-repeat;
   border: none;
@@ -31,4 +36,25 @@
   outline: none;
   border-top: solid $black 1px;
   margin-top: 2rem;
+}
+
+.text {display: flex;
+  text-align: center;
+  color: $black;
+  white-space: nowrap;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
+  letter-spacing: 2.4px;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  font-weight: bold;
+  width: 210px;
+}
+
+
+.text-bold {
+  font-weight: bold;
+  background-color: transparent;
+  background-repeat: no-repeat;
 }

@@ -115,7 +115,6 @@ const SignupForm = ({ onSubmit }: SignupFormProps) => {
             onClick={handleSubmit}
             disabled={status === PENDING}
             title="SIGN UP"
-            className="signup-button"
           />
 
         </form>
@@ -124,7 +123,7 @@ const SignupForm = ({ onSubmit }: SignupFormProps) => {
 
   
     </Formik>
-    <Button onClick={handleRedirect} disabled={false} secondary={true} title="SIGN IN" className="login-button"/>
+    <Button onClick={handleRedirect} disabled={false} type='secondary' title="SIGN IN"/>
 
     </>
   );
