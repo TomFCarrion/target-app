@@ -68,7 +68,7 @@ const LoginForm = ({ onSubmit }: LoginFormProps) => {
             onClick={handleSubmit}
             disabled={status === PENDING}
             title="Login"
-            className="login-button"
+            type='default'
           />
         </form>
       )}
